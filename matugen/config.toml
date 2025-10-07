@@ -9,3 +9,8 @@ version_check = false
 input_path = '~/.config/matugen/templates/matugen-waybar.css'
 output_path = '~/.config/waybar/matugen/matugen-waybar.css'
 post_hook = 'pkill -SIGUSR2 waybar'
+
+# Kitty
+[templates.kitty]
+input_path = '~/.config/matugen/templates/matugen-kitty.conf'
+output_path = '~/.config/kitty/matugen/matugen-colors.conf'
