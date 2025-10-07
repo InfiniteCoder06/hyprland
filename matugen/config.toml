@@ -1,0 +1,11 @@
+# Global Configs
+[config]
+version_check = false
+
+# Templates
+
+# Waybar
+[templates.waybar]
+input_path = '~/.config/matugen/templates/matugen-waybar.css'
+output_path = '~/.config/waybar/matugen/matugen-waybar.css'
+post_hook = 'pkill -SIGUSR2 waybar'
