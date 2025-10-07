@@ -1,0 +1,81 @@
+@import "matugen/matugen-waybar.css";
+
+
+* {
+    font-family: JetBrainsMonoNL NFP, sans-serif;
+    font-size: 13px;
+    font-weight: bold;
+    border-radius: 20px;
+}
+
+.modules-left {
+    margin-left: 5px;
+}
+
+.modules-right {
+    margin-right: 5px;
+}
+
+window#waybar {
+    background: transparent;
+}
+
+tooltip {
+  background: @surface-alpha;
+  border: 2px solid alpha(@primary, 0.7);
+  border-radius: 12px;
+}
+
+tooltip label {
+  color: @on_surface;
+  padding: 6px;
+}
+
+#workspaces {
+    background-color: @surface_container_low_alpha;
+    margin: 5px 5px;
+    padding: 8px 5px;
+    border-radius: 16px;
+}
+#workspaces button {
+    padding: 0px 5px;
+    margin: 0px 3px;
+    color: @primary;
+    background: @surface_container_highest;
+    transition: all 0.3s ease-in-out;
+}
+
+#workspaces button.active {
+    border-radius: 8px;
+    background-color: @primary_fixed_dim;
+    color: @on_primary_fixed;
+    min-width: 50px;
+}
+
+#workspaces button:hover {
+    background-color: @secondary_fixed_dim;
+    color: @on_secondary_fixed;
+    min-width: 40px;
+}
+
+#workspaces button.urgent {
+    background-color: @error;
+    color: @on_error;
+    min-width: 50px;
+}
+
+#custom-launcher, #network, #battery, #window, #clock, #custom-notification {
+    background-color: @surface_container_low_alpha;
+    color: @primary;
+    margin: 5px 2px;
+    padding: 0 15px;
+}
+
+#custom-launcher {
+    font-size: 16px;
+}
+
+#battery.critical {
+    background-color: alpha(@error_container, 0.9);
+    color: @error;
+}

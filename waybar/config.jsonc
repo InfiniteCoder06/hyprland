@@ -1,0 +1,86 @@
+// -*- mode: jsonc -*-
+{
+    "height": 20,
+    "spacing": 4,
+    "modules-left": [
+        "custom/launcher",
+        "clock"
+    ],
+    "modules-center": [
+        "hyprland/workspaces"
+    ],
+    "modules-right": [
+        "network",
+        "battery"
+    ],
+    "custom/launcher": {
+        "format": "",
+        "tooltip": "false",
+        "tooltip-format": ""
+    },
+    "hyprland/workspaces": {
+        "format": "{icon}",
+        "cursor": "pointer",
+        "on-click": "activate",
+        "persistent-workspaces": {
+            "*": 5
+        },
+        "format-icons": {
+            "1": "1",
+            "2": "2",
+            "3": "3",
+            "4": "4",
+            "5": "5",
+            "6": "6",
+            "7": "7",
+            "8": "8",
+            "9": "9",
+            "10": "10"
+        },
+        "sort-by-number": true
+    },
+    "clock": {
+        "format": "󰥔 {:%I:%M %p}",
+        "format-alt": "󰥔 {:%a, %d. %b  %I:%M %p}",
+        "tooltip": "true",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
+    },
+    "network": {
+        "format-wifi": "{icon} {essid}",
+        "format-ethernet": "󰈀  {ipaddr}/{cidr}",
+        "tooltip-format": "{ifname} via {gwaddr}",
+        "format-linked": " {ifname} (No IP)",
+        "format-disconnected": "󰤭  Disconnected",
+        "format-icons": [
+            "󰤯",
+            "󰤟",
+            "󰤢",
+            "󰤥",
+            "󰤨"
+        ],
+        "format-alt": "{ifname}: {ipaddr}/{cidr}"
+    },
+    "battery": {
+        "states": {
+            "critical": 15
+        },
+        "format": "{icon} {capacity}%",
+        "format-critical": "<span size='12000'>{icon} </span>{capacity}%",
+        "format-charging": "<span size='12000' foreground='#8cb6ff'>󰂄 </span>{capacity}%",
+        "format-full": "<span size='12000' foreground='#8cb6ff'>󰂄 </span>{capacity}%",
+        "format-icons": [
+            "󰁺",
+            "󰁻",
+            "󰁼",
+            "󰁽",
+            "󰁾",
+            "󰁿",
+            "󰂀",
+            "󰂁",
+            "󰂂",
+            "󰁹"
+        ],
+        "tooltip-format": "Time remaining: {time}\nPower draw: {power}W",
+        "interval": 3
+    }
+}
