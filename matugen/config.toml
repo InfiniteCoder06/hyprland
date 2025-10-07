@@ -10,6 +10,12 @@ input_path = '~/.config/matugen/templates/matugen-waybar.css'
 output_path = '~/.config/waybar/matugen/matugen-waybar.css'
 post_hook = 'pkill -SIGUSR2 waybar'
 
+# Hyprland
+[templates.hyprland]
+input_path = '~/.config/matugen/templates/matugen-hyprland.conf'
+output_path = '~/.config/hypr/matugen/matugen-hyprland.conf'
+post_hook = 'hyprctl reload'
+
 # Kitty
 [templates.kitty]
 input_path = '~/.config/matugen/templates/matugen-kitty.conf'
