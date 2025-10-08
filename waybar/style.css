@@ -21,14 +21,14 @@ window#waybar {
 }
 
 tooltip {
-  background: @surface-alpha;
-  border: 2px solid alpha(@primary, 0.7);
-  border-radius: 12px;
+    background: @surface-alpha;
+    border: 2px solid alpha(@primary, 0.7);
+    border-radius: 12px;
 }
 
 tooltip label {
-  color: @on_surface;
-  padding: 6px;
+    color: @on_surface;
+    padding: 6px;
 }
 
 #workspaces {
@@ -37,6 +37,7 @@ tooltip label {
     padding: 8px 5px;
     border-radius: 16px;
 }
+
 #workspaces button {
     padding: 0px 5px;
     margin: 0px 3px;
@@ -64,7 +65,13 @@ tooltip label {
     min-width: 50px;
 }
 
-#custom-launcher, #network, #battery, #window, #clock, #custom-notification {
+#network,
+#battery,
+#window,
+#clock,
+#power-profiles-daemon,
+#custom-launcher,
+#custom-notification {
     background-color: @surface_container_low_alpha;
     color: @primary;
     margin: 5px 2px;

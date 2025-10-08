@@ -7,8 +7,9 @@
         "clock"
     ],
     "modules-center": [
+        "custom/notification",
         "hyprland/workspaces",
-        "custom/notification"
+        "power-profiles-daemon"
     ],
     "modules-right": [
         "network",
@@ -103,5 +104,16 @@
         ],
         "tooltip-format": "Time remaining: {time}\nPower draw: {power}W",
         "interval": 3
+    },
+    "power-profiles-daemon": {
+        "format": "{icon}",
+        "tooltip-format": "Power mode: {profile}",
+        "tooltip": true,
+        "format-icons": {
+            "default": "",
+            "performance": "󰠠",
+            "balanced": "󰚀",
+            "power-saver": "󰌪"
+        }
     }
 }
