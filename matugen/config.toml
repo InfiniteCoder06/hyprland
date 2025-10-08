@@ -40,3 +40,9 @@ output_path = '~/.config/qt6ct/colors/matugen-qt6ct.conf'
 [templates.rofi]
 input_path = '~/.config/matugen/templates/matugen-rofi.rasi'
 output_path = '~/.config/rofi/matugen/matugen-rofi.rasi'
+
+# Swaync
+[templates.swaync]
+input_path = '~/.config/matugen/templates/matugen-swaync.css'
+output_path = '~/.config/swaync/matugen/matugen-swaync.css'
+post_hook = 'swaync-client -rs'

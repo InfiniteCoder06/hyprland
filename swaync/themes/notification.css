@@ -1,0 +1,87 @@
+* {
+  color: @text;
+  all: unset;
+  font-size: 16px;
+  font-family: JetBrainsMonoNL NFP;
+  transition: 200ms;
+}
+
+.notification-row {
+  outline: none;
+  margin: 0;
+  padding: 0px;
+}
+
+.floating-notifications.background .notification-row .notification-background {
+  background: @surface;
+  box-shadow: 0 0 8px 0 rgba(0, 0, 0, .6);
+  border: 1px solid @outline;
+  border-radius: 24px;
+  margin: 16px;
+  padding: 0;
+}
+
+.floating-notifications.background .notification-row .notification-background .notification {
+  padding: 6px;
+  border-radius: 12px;
+}
+
+.floating-notifications.background .notification-row .notification-background .notification.critical {
+  border: 2px solid @error;
+}
+
+.floating-notifications.background .notification-row .notification-background .notification .notification-content {
+  margin: 14px;
+}
+
+.floating-notifications.background .notification-row .notification-background .notification>*:last-child>* {
+  min-height: 3.4em;
+}
+
+.floating-notifications.background .notification-row .notification-background .notification>*:last-child>* .notification-action {
+  border-radius: 8px;
+  margin: 6px;
+  border: 1px solid transparent;
+}
+
+.floating-notifications.background .notification-row .notification-background .notification>*:last-child>* .notification-action:hover,
+.floating-notifications.background .notification-row .notification-background .notification>*:last-child>* .notification-action:active {
+  background-color: @background-alt;
+  border: 1px solid @primary;
+}
+
+.image {
+  margin: 10px 20px 10px 0px;
+}
+
+.summary {
+  font-weight: 800;
+  font-size: 1rem;
+}
+
+.body {
+  font-size: 0.8rem;
+}
+
+.floating-notifications.background .notification-row .notification-background .close-button {
+  margin: 6px;
+  padding: 2px;
+  border-radius: 6px;
+  background-color: transparent;
+  border: 1px solid transparent;
+}
+
+.floating-notifications.background .notification-row .notification-background .close-button:hover,
+.floating-notifications.background .notification-row .notification-background .close-button:active {
+  background-color: @background-alt;
+  color: @inverse_surface;
+}
+
+.notification.critical progress {
+  background-color: @primary;
+}
+
+.notification.low progress,
+.notification.normal progress {
+  background-color: @primary;
+}
