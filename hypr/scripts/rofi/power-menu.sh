@@ -1,25 +1,25 @@
 #!/bin/bash
 
 # Power menu options
-options=" Logout\n Reboot\n⏻ Shutdown\n Suspend\n Lock"
+options="  Logout\n  Reboot\n⏻  Shutdown\n  Suspend\n  Lock"
 
 # Launch Rofi with the options
 chosen=$(echo -e "$options" | rofi -dmenu -p "Power Menu" -config ~/.config/rofi/config.rasi)
 
 case $chosen in
-    " Logout")
+    "  Logout")
         hyprctl dispatch exit
         ;;
-    " Reboot")
+    "  Reboot")
         systemctl reboot
         ;;
-    "⏻ Shutdown")
+    "⏻  Shutdown")
         systemctl poweroff
         ;;
-    " Suspend")
+    "  Suspend")
         systemctl suspend
         ;;
-    " Lock")
+    "  Lock")
         hyprlock
         ;;
     *)
