@@ -4,6 +4,10 @@ version_check = false
 
 # Templates
 
+[templates.btop]
+input_path = '~/.config/matugen/templates/matugen-btop.theme'
+output_path = '~/.config/btop/themes/matugen.theme'
+
 # Waybar
 [templates.waybar]
 input_path = '~/.config/matugen/templates/matugen-waybar.css'
