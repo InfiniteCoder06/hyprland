@@ -1,5 +1,12 @@
 #!/bin/bash
 
+# get argument if any
+if [ "$1" == "no-notify" ]; then
+    NO_NOTIFY=true
+else
+    NO_NOTIFY=false
+fi
+
 _ps=(waybar rofi swaync swww)
 for p in "${_ps[@]}"; do
     if pidof "$p" >/dev/null; then
@@ -15,4 +22,6 @@ swww-daemon
 
 hyprctl reload
 
-notify-send "Refresh" "Refreshed Hyprland, Waybar and Swaync, Swww"
+if [ "$NO_NOTIFY" = false ]; then
+    notify-send "Refresh" "Refreshed Hyprland, Waybar and Swaync, Swww"
+fi
