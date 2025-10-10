@@ -13,6 +13,7 @@
     ],
     "modules-right": [
         "network",
+        "bluetooth",
         "battery"
     ],
     "custom/launcher": {
@@ -104,6 +105,17 @@
         ],
         "tooltip-format": "Time remaining: {time}\nPower draw: {power}W",
         "interval": 3
+    },
+    "bluetooth": {
+        "format": " {status}",
+        "format-disabled": "󰂳",
+        "format-connected": " {num_connections} {device_alias}",
+        "format-connected-battery": " {device_alias} {device_battery_percentage}%",
+        "tooltip-format": " {device_alias}",
+        "tooltip-format-connected": "{device_enumerate}",
+        "tooltip-format-enumerate-connected": " {device_alias} 󰂄{device_battery_percentage}%",
+        "tooltip": true,
+        "on-click": "blueman-manager"
     },
     "power-profiles-daemon": {
         "format": "{icon}",
