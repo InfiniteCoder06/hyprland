@@ -12,13 +12,11 @@ output_path = '~/.config/btop/themes/matugen.theme'
 [templates.waybar]
 input_path = '~/.config/matugen/templates/matugen-waybar.css'
 output_path = '~/.config/waybar/matugen/matugen-waybar.css'
-post_hook = 'pkill -SIGUSR2 waybar'
 
 # Hyprland
 [templates.hyprland]
 input_path = '~/.config/matugen/templates/matugen-hyprland.conf'
 output_path = '~/.config/hypr/matugen/matugen-hyprland.conf'
-post_hook = 'hyprctl reload'
 
 # Kitty
 [templates.kitty]
@@ -49,4 +47,3 @@ output_path = '~/.config/rofi/matugen/matugen-rofi.rasi'
 [templates.swaync]
 input_path = '~/.config/matugen/templates/matugen-swaync.css'
 output_path = '~/.config/swaync/matugen/matugen-swaync.css'
-post_hook = 'swaync-client -rs'
