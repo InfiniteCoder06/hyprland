@@ -32,7 +32,7 @@ tooltip label {
 }
 
 #workspaces {
-    background-color: @surface_container_low_alpha;
+    background-color: alpha(@surface_container_low_alpha, 0.8);
     margin: 5px 5px;
     padding: 8px 5px;
     border-radius: 16px;
@@ -73,7 +73,7 @@ tooltip label {
 #power-profiles-daemon,
 #custom-launcher,
 #custom-notification {
-    background-color: @surface_container_low_alpha;
+    background-color: alpha(@surface_container_low_alpha, 0.8);
     color: @primary;
     margin: 5px 2px;
     padding: 0 15px;
