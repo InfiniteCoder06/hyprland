@@ -90,6 +90,6 @@ element-icon {
 }
 
 element-text {
-    font: "Noto Sans Medium 11";
+    font: "Overpass Nerd Font Propo 11";
     text-color: inherit;
 }
