@@ -6,6 +6,7 @@
     font-size: 12px;
     font-weight: bold;
     border-radius: 20px;
+    transition: all 0.3s ease-in-out;
 }
 
 .modules-left {
@@ -41,15 +42,13 @@ tooltip label {
 #workspaces button {
     padding: 0px 5px;
     margin: 0px 3px;
-    color: @primary;
+    color: @surface_container_highest;
     background: @surface_container_highest;
-    transition: all 0.3s ease-in-out;
 }
 
 #workspaces button.active {
     border-radius: 8px;
     background-color: @primary_fixed_dim;
-    color: @on_primary_fixed;
     min-width: 50px;
 }
 
@@ -79,11 +78,16 @@ tooltip label {
     padding: 0 15px;
 }
 
-#custom-launcher {
-    font-size: 16px;
+#custom-launcher, #power-profiles-daemon, #custom-notification {
+    font-size: 14px;
 }
 
 #battery.critical {
     background-color: alpha(@error_container, 0.9);
     color: @error;
+}
+
+#battery.charging {
+    background-color: alpha(@primary_container, 0.9);
+    color: @on_primary_container;
 }
