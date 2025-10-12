@@ -52,7 +52,7 @@ if [ -n "$SELECTED_WALL" ]; then
     swww img "$WALLPAPER_CURRENT" "${SWWW_PARAMS[@]}"
     matugen image "$WALLPAPER_CURRENT"
     "$SCRIPTS_DIR/refresh.sh" no-notify
-    notify-send "Wallpaper Set" "$WALLPAPER_CURRENT"
+    notify-send "Wallpaper Set" "$SELECTED_WALL"
   else
     notify-send "Wallpaper Error" "Selected wallpaper file not found"
   fi
