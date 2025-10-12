@@ -7,10 +7,7 @@ CONFIGS=(
   fastfetch
   hypr
   kitty
-  Kvantum
   matugen
-  qt5ct
-  qt6ct
   quickshell
   rofi
   swaync
