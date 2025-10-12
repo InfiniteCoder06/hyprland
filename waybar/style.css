@@ -22,7 +22,7 @@ window#waybar {
 }
 
 tooltip {
-    background: @surface-alpha;
+    background-color: alpha(@surface_container_low, 0.9);
     border: 2px solid alpha(@primary, 0.7);
     border-radius: 12px;
 }
