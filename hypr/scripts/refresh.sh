@@ -1,4 +1,6 @@
-#!/bin/bash
+#!/usr/bin/env bash
+
+source "$HOME/.config/hypr/scripts/utils.sh"
 
 # get argument if any
 if [ "$1" == "no-notify" ]; then
@@ -9,9 +11,7 @@ fi
 
 _ps=(waybar rofi swaync swww)
 for p in "${_ps[@]}"; do
-    if pidof "$p" >/dev/null; then
-        killall "$p"
-    fi
+    kill_app "$p"
 done
 
 sleep 0.5
@@ -23,5 +23,5 @@ swww-daemon
 hyprctl reload
 
 if [ "$NO_NOTIFY" = false ]; then
-    notify-send "Refresh" "Refreshed Hyprland, Waybar and Swaync, Swww"
+    notify-send -e -u low "Refresh" "Refreshed Hyprland, Waybar and Swaync, Swww"
 fi

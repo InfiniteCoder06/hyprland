@@ -1,36 +1,18 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
-# Directories and config
-WALL_DIR="$HOME/Pictures/Wallpapers"
-ROFI_DIR="$HOME/.config/rofi"
-ROFI_THEME="$ROFI_DIR/config-wallpaper.rasi"
-WALLPAPER_CURRENT="$HOME/.config/.wallpaper_current"
-SCRIPTS_DIR="$HOME/.config/hypr/scripts"
+source "$HOME/.config/hypr/scripts/constants.sh"
+source "$HOME/.config/hypr/scripts/utils.sh"
+source "$HOME/.config/hypr/scripts/variables.sh"
 
-# Save current working directory to return later
-CWD="$(pwd)"
-
-# swww transition configuration
-FPS=144
-TYPE="any"
-DURATION=2
-BEZIER=".43,1.19,1,.4"
-SWWW_PARAMS=(
-  --transition-fps "$FPS"
-  --transition-type "$TYPE"
-  --transition-duration "$DURATION"
-  --transition-bezier "$BEZIER"
-)
-
-cd "$WALL_DIR" || {
-  notify-send "Wallpaper Error" "Cannot access $WALL_DIR"
+check_dir_exists "$wallpaper_dir" || {
+  notify-send "Wallpaper Error" "$wallpaper_dir does not exist"
   exit 1
 }
 
-mapfile -t WALLPAPERS < <(find . -maxdepth 1 -type f \( -iname '*.jpg' -o -iname '*.png' \) | sort)
+mapfile -t WALLPAPERS < <(find "$wallpaper_dir" -maxdepth 1 -type f \( -iname '*.jpg' -o -iname '*.png' \) | sort)
 
 if [ ${#WALLPAPERS[@]} -eq 0 ]; then
-  notify-send "Wallpaper Error" "No wallpapers found in $WALL_DIR"
+  notify-send "Wallpaper Error" "No wallpapers found in $wallpaper_dir"
   cd "$CWD"
   exit 1
 fi
@@ -41,17 +23,16 @@ for wallpaper in "${WALLPAPERS[@]}"; do
   ROFI_INPUT+="$display_name\x00icon\x1f$wallpaper\n"
 done
 
-SELECTED_WALL=$(printf "%b" "$ROFI_INPUT" | rofi -dmenu -show-icons -config "$ROFI_THEME" -p "")
+SELECTED_WALL=$(printf "%b" "$ROFI_INPUT" | rofi -dmenu -show-icons -config "$rofi_image_theme" -p "")
 
 if [ -n "$SELECTED_WALL" ]; then
-  if [[ -f "$WALL_DIR/$SELECTED_WALL" ]]; then
-    mkdir -p "$(dirname "$WALLPAPER_CURRENT")"
-    cp -f "$WALL_DIR/$SELECTED_WALL" "$WALLPAPER_CURRENT"
+  if [[ -f "$wallpaper_dir/$SELECTED_WALL" ]]; then
+    mkdir -p "$(dirname "$wallpaper_current")"
+    cp -f "$wallpaper_dir/$SELECTED_WALL" "$wallpaper_current"
 
-
-    swww img "$WALLPAPER_CURRENT" "${SWWW_PARAMS[@]}"
-    matugen image "$WALLPAPER_CURRENT"
-    "$SCRIPTS_DIR/refresh.sh" no-notify
+    swww img "$wallpaper_current" "${SWWW_PARAMS[@]}"
+    matugen image "$wallpaper_current"
+    "$scripts_dir/refresh.sh" no-notify
     notify-send "Wallpaper Set" "$SELECTED_WALL"
   else
     notify-send "Wallpaper Error" "Selected wallpaper file not found"
@@ -59,5 +40,3 @@ if [ -n "$SELECTED_WALL" ]; then
 else
   notify-send "Wallpaper" "No wallpaper selected"
 fi
-
-cd "$CWD"
