@@ -81,7 +81,8 @@
             "󰤥",
             "󰤨"
         ],
-        "format-alt": "{ifname}: {ipaddr}/{cidr}"
+        "format-alt": "{ifname}: {ipaddr}/{cidr}",
+        "on-click-right": "kitty --class tui -e impala"
     },
     "battery": {
         "states": {
@@ -115,7 +116,7 @@
         "tooltip-format-connected": "{device_enumerate}",
         "tooltip-format-enumerate-connected": " {device_alias} 󰂄{device_battery_percentage}%",
         "tooltip": true,
-        "on-click": "blueman-manager"
+        "on-click": "kitty --class tui -e bluetui"
     },
     "power-profiles-daemon": {
         "format": "{icon}",

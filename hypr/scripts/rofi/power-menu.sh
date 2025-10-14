@@ -11,6 +11,7 @@ chosen=$(echo -e "$options" | rofi -dmenu -p "Power Menu" -config $rofi_default_
 case $chosen in
     "  Logout")
         hyprctl dispatch exit
+        loginctl terminate-user "$(whoami)"
         ;;
     "  Reboot")
         systemctl reboot
