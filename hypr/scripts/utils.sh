@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+source "$HOME/.config/hypr/scripts/constants.sh"
+
 kill_app() {
   local app_name="$1"
   if pidof "$app_name" > /dev/null; then
@@ -15,4 +17,14 @@ check_dir_exists() {
   else
     return 1
   fi
+}
+
+apply_wallpaper() {
+  local wallpaper_path="$1"
+  local notify_msg="$2"
+
+  swww img "$wallpaper_path" "${SWWW_PARAMS[@]}"
+  matugen image "$wallpaper_path"
+  "$scripts_dir/refresh.sh" no-notify
+  notify-send "Wallpaper" "$notify_msg"
 }

@@ -27,13 +27,8 @@ SELECTED_WALL=$(printf "%b" "$ROFI_INPUT" | rofi -dmenu -show-icons -config "$ro
 
 if [ -n "$SELECTED_WALL" ]; then
   if [[ -f "$wallpaper_dir/$SELECTED_WALL" ]]; then
-    mkdir -p "$(dirname "$wallpaper_current")"
     cp -f "$wallpaper_dir/$SELECTED_WALL" "$wallpaper_current"
-
-    swww img "$wallpaper_current" "${SWWW_PARAMS[@]}"
-    matugen image "$wallpaper_current"
-    "$scripts_dir/refresh.sh" no-notify
-    notify-send "Wallpaper Set" "$SELECTED_WALL"
+    apply_wallpaper "$wallpaper_current" "Wallpaper set to $SELECTED_WALL"
   else
     notify-send "Wallpaper Error" "Selected wallpaper file not found"
   fi

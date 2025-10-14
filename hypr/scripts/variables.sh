@@ -8,6 +8,7 @@ rofi_default_theme="$rofi_dir/config.rasi"
 rofi_image_theme="$rofi_dir/config-wallpaper.rasi"
 
 wallpaper_current="$HOME/.config/.wallpaper_current"
+wallpaper_effects="$HOME/.config/.wallpaper_effects"
 wallpaper_dir="$HOME/Pictures/Wallpapers"
 
 scripts_dir="$HOME/.config/hypr/scripts"
