@@ -84,10 +84,15 @@ tooltip label {
 
 #battery.critical {
     background-color: alpha(@error_container, 0.9);
-    color: @error;
+    color: @on_error_container;
 }
 
 #battery.charging {
     background-color: alpha(@primary_container, 0.9);
     color: @on_primary_container;
+}
+
+#battery.full {
+    background-color: alpha(@tertiary_container, 0.9);
+    color: @on_tertiary_container;
 }

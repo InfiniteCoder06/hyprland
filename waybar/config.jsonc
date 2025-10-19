@@ -82,16 +82,16 @@
             "󰤨"
         ],
         "format-alt": "{ifname}: {ipaddr}/{cidr}",
-        "on-click-right": "kitty --class tui -e impala"
+        "on-click-right": "kitty --class tui -e wifitui"
     },
     "battery": {
         "states": {
             "critical": 15
         },
         "format": "{icon} {capacity}%",
-        "format-critical": "<span size='12000'>{icon} </span>{capacity}%",
-        "format-charging": "<span foreground='#8cb6ff'>󰂄</span> {capacity}%",
-        "format-full": "<span foreground='#8cb6ff'>󰂄</span> {capacity}%",
+        "format-critical": "{icon} {capacity}%",
+        "format-charging": "󰂄 {capacity}%",
+        "format-full": "󰂄 {capacity}%",
         "format-icons": [
             "󰁺",
             "󰁻",
