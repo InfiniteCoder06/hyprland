@@ -62,34 +62,13 @@
         },
         "sort-by-number": true
     },
-    "clock": {
-        "format": "󰥔 {:%I:%M %p}",
-        "format-alt": "󰥔 {:%a, %d. %b  %I:%M %p}",
-        "tooltip": "true",
-        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
-    },
-    "network": {
-        "format-wifi": "{icon} {essid}",
-        "format-ethernet": " {ipaddr}/{cidr}",
-        "tooltip-format": "{ifname} via {gwaddr}",
-        "format-linked": " {ifname} (No IP)",
-        "format-disconnected": "󰤭 Disconnected",
-        "format-icons": [
-            "󰤯",
-            "󰤟",
-            "󰤢",
-            "󰤥",
-            "󰤨"
-        ],
-        "format-alt": "{ifname}: {ipaddr}/{cidr}",
-        "on-click-right": "kitty --class tui -e wifitui"
-    },
     "battery": {
         "states": {
-            "critical": 15
+            "critical": 15,
+            "good": 95,
+            "full": 100
         },
         "format": "{icon} {capacity}%",
-        "format-critical": "{icon} {capacity}%",
         "format-charging": "󰂄 {capacity}%",
         "format-full": "󰂄 {capacity}%",
         "format-icons": [
@@ -105,7 +84,9 @@
             "󰁹"
         ],
         "tooltip-format": "Time remaining: {time}\nPower draw: {power}W",
-        "interval": 3
+        "interval": 3,
+        "on-scroll-up" : "brightnessctl s 1%-",
+        "on-scroll-down" : "brightnessctl s 1%+"
     },
     "bluetooth": {
         "format": " {status}",
@@ -114,14 +95,33 @@
         "format-connected-battery": " {device_alias} {device_battery_percentage}%",
         "tooltip-format": " {device_alias}",
         "tooltip-format-connected": "{device_enumerate}",
-        "tooltip-format-enumerate-connected": " {device_alias} 󰂄{device_battery_percentage}%",
-        "tooltip": true,
-        "on-click": "kitty --class tui -e bluetui"
+        "tooltip-format-enumerate-connected": " {device_alias} 󰂄 {device_battery_percentage}%",
+        "on-click-right": "kitty --class tui -e bluetui"
+    },
+    "clock": {
+        "format": "󰥔 {:%I:%M %p}",
+        "format-alt": "󰥔 {:%a, %d. %b  %I:%M %p}",
+        "tooltip": "true",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
+    },
+    "network": {
+        "format-wifi": "{icon} {essid}",
+        "format-ethernet": " {ipaddr}/{cidr}",
+        "format-linked": " {ifname} (No IP)",
+        "format-disconnected": "󰤭 Disconnected",
+        "format-alt": " Up: {bandwidthUpBytes} Down: {bandwidthDownBytes}",
+        "format-icons": [
+            "󰤯",
+            "󰤟",
+            "󰤢",
+            "󰤥",
+            "󰤨"
+        ],
+        "interval": 3,
+        "tooltip": false,
+        "on-click-right": "kitty --class tui -e wifitui"
     },
     "power-profiles-daemon": {
-        "format": "{icon}",
-        "tooltip-format": "Power mode: {profile}",
-        "tooltip": true,
         "format-icons": {
             "default": "",
             "performance": "󰠠",
