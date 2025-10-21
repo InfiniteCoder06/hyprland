@@ -1,4 +1,6 @@
 **/matugen-*
-!matugen/**
+!/configs/matugen/**
 **/btop/themes/matugen.theme
-hypr/configs/animations.conf
+/configs/hypr/configs/animations.conf
+
+**/*.pyc
