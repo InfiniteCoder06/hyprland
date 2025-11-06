@@ -34,6 +34,7 @@ class DotFiles(Module):
         "rofi",
         "swaync",
         "waybar",
+        "wifitui"
     ]
     
     def run(self):
