@@ -1,5 +1,4 @@
 @import "~/.config/rofi/config.rasi"
-@theme "~/.config/rofi/templates/rounded-template.rasi"
 
 /* ---- Configuration ---- */
 configuration {
@@ -14,12 +13,7 @@ window {
 /* ---- Mainbox ---- */
 mainbox {
     children: [ "inputbar", "listview" ];
-    padding: 12px;
-}
-
-entry {
-    placeholder: " Search / Choose Wallpaper";
-    padding: 8px 16px;
+    padding: 4px;
 }
 
 /* ---- Listview ---- */
@@ -39,16 +33,6 @@ element {
     orientation: vertical;
 }
 
-element normal active {
-    background-color: @bg3;
-    text-color: @fg0;
-}
-
-element selected normal, element selected active {
-    background-color: @bg4;
-    text-color: @fg4;
-}
-
 element-icon {
     border-radius: 12px;
     size: 20%;
@@ -60,5 +44,4 @@ element-text {
     vertical-align: 0.5;
     horizontal-align: 0.5;
     margin: 6px;
-    text-color: @fg0;
 }

@@ -1,0 +1,12 @@
+@theme "~/.config/rofi/matugen/matugen-rofi.rasi"
+
+* {
+    bg-alpha: @surface-alpha;
+    bg0:      @surface-container-low;
+    bg1:      @surface;
+    bg3:      @primary-fixed-dim;
+    bg4:      @primary-container;
+    fg1:      @on-surface;
+    fg2:      @primary;
+    fg4:      @on-primary-container;
+}
