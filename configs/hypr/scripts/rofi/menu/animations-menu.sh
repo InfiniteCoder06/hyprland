@@ -11,8 +11,8 @@ if [ ${#ANIMATIONS[@]} -eq 0 ]; then
 fi
 
 for i in "${!ANIMATIONS[@]}"; do
-    name="${ANIMATIONS[$i]}"
-    ANIMATIONS[$i]="${ANIMATIONS[$i]%.conf}"
+  name="${ANIMATIONS[$i]}"
+  ANIMATIONS[$i]="${ANIMATIONS[$i]%.conf}"
 done
 
 chosen_file=$(printf '%s\n' "${ANIMATIONS[@]}" | rofi -i -dmenu -config "$rofi_default_theme" -p "Animations")

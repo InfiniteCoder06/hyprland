@@ -1,0 +1,5 @@
+@import "~/.config/rofi/config.rasi"
+
+element-text {
+    font: "Noto Sans Medium 11";
+}
