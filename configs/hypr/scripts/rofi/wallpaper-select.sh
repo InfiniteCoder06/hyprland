@@ -23,7 +23,7 @@ for wallpaper in "${WALLPAPERS[@]}"; do
   ROFI_INPUT+="$display_name\x00icon\x1f$wallpaper\n"
 done
 
-SELECTED_WALL=$(printf "%b" "$ROFI_INPUT" | rofi -dmenu -show-icons -config "$rofi_image_theme" -p "")
+SELECTED_WALL=$(printf "%b" "$ROFI_INPUT" | rofi -dmenu -p "Wallpaper" -show-icons -config "$rofi_image_theme" -p "")
 
 if [ -n "$SELECTED_WALL" ]; then
   if [[ -f "$wallpaper_dir/$SELECTED_WALL" ]]; then
