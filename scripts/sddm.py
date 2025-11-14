@@ -77,10 +77,10 @@ class SDDM(Module):
                 pattern = f"{key}="
                 replacement = f"{key}={value}"
             
-            if pattern not in content:
-                content += f"{replacement}\n"
-            else:
-                content = re.sub(rf"{key}=.*", replacement, content)
+                if pattern not in content:
+                    content += f"{replacement}\n"
+                else:
+                    content = re.sub(rf"{key}=.*", replacement, content)
 
         with open("/tmp/sddm", "w") as f:
             f.write(content)
