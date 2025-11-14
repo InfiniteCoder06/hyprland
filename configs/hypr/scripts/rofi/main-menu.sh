@@ -32,7 +32,7 @@ case "$choice" in
   rofi -i -show drun -show-icons -config "$rofi_default_theme"
   ;;
 *"Bluetooth")
-  "$scripts_dir/rofi/menu/bluetooth-menu.sh"
+  rofi-bluetooth
   ;;
 *"Customize")
   "$scripts_dir/rofi/menu/customize-menu.sh"

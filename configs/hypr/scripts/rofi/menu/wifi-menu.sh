@@ -25,7 +25,7 @@ case "$ACTION" in
   SSID=$(printf '%s' "$SSID")
 
   if nmcli -t -f ACTIVE,SSID dev wifi | awk -F: '$1=="yes"{print $2}' | grep -Fxq "$SSID"; then
-    nmcli connection down "$SSID" && notify-send "WiFi" "Disconnected from $SSID"
+    nmcli connection down "$SSID" && notify-send -e -i network-wireless-disabled-symbolic "WiFi" "Disconnected from $SSID"
     exit 0
   fi
 
@@ -33,42 +33,42 @@ case "$ACTION" in
   SECURITY=${SECURITY%%:*}
   if [ "$SECURITY" = "--" ] || [ -z "$SECURITY" ]; then
     if nmcli device wifi connect "$SSID"; then
-      notify-send "WiFi" "Connected to $SSID (open)"
+      notify-send -e -i network-wireless-connected-symbolic "WiFi" "Connected to $SSID (open)"
     else
-      notify-send "WiFi" "Failed to connect to $SSID"
+      notify-send -e -i network-wireless-error-symbolic "WiFi" "Failed to connect to $SSID"
     fi
   else
     PASSWORD=$(rofi -dmenu -password -p "Password for $SSID" -config "$rofi_default_theme")
     if [ -z "${PASSWORD:-}" ]; then
-      notify-send "WiFi" "No password provided"
+      notify-send -e -i network-wireless-error-symbolic "WiFi" "No password provided"
       exit 0
     fi
     if nmcli device wifi connect "$SSID" password "$PASSWORD"; then
-      notify-send "WiFi" "Connected to $SSID"
+      notify-send -e -i network-wireless-connected-symbolic "WiFi" "Connected to $SSID"
     else
-      notify-send "WiFi" "Failed to connect to $SSID"
+      notify-send -e -i network-wireless-error-symbolic "WiFi" "Failed to connect to $SSID"
     fi
   fi
   ;;
 *"Turn On")
   if nmcli radio wifi on; then
-    notify-send "WiFi" "WiFi turned on"
+    notify-send -e -i network-wireless-connected-symbolic "WiFi" "WiFi turned on"
   else
-    notify-send "WiFi" "Failed to turn WiFi on"
+    notify-send -e -i network-wireless-error-symbolic "WiFi" "Failed to turn WiFi on"
   fi
   ;;
 *"Turn Off")
   if nmcli radio wifi off; then
-    notify-send "WiFi" "WiFi turned off"
+    notify-send -e -i network-wireless-disabled-symbolic "WiFi" "WiFi turned off"
   else
-    notify-send "WiFi" "Failed to turn WiFi off"
+    notify-send -e -i network-wireless-error-symbolic "WiFi" "Failed to turn WiFi off"
   fi
   ;;
 *"Restart")
   if nmcli radio wifi off && sleep 2 && nmcli radio wifi on; then
-    notify-send "WiFi" "WiFi restarted"
+    notify-send -e -i network-wireless-connected-symbolic "WiFi" "WiFi restarted"
   else
-    notify-send "WiFi" "Failed to restart WiFi"
+    notify-send -e -i network-wireless-error-symbolic "WiFi" "Failed to restart WiFi"
   fi
   ;;
 *"Go Back")

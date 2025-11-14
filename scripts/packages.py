@@ -45,6 +45,7 @@ class Packages(Module):
         "kvantum",
         "kvantum-qt5",
         "libnotify",
+        "matugen",
         "nautilus",
         "neovim",
         "nwg-look",
@@ -65,11 +66,11 @@ class Packages(Module):
     AUR_PACKAGES = [
         "clipse",
         "grimblast-git",
-        "matugen-bin",
         "nautilus-admin-gtk4",
         "nautilus-code-git",
         "nautilus-open-any-terminal",
         "paruz",
+        "rofi-bluetooth",
         "visual-studio-code-bin",
         "zen-browser-bin",
     ]

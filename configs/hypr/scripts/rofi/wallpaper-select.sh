@@ -5,15 +5,15 @@ source "$HOME/.config/hypr/scripts/utils.sh"
 source "$HOME/.config/hypr/scripts/variables.sh"
 
 check_dir_exists "$wallpaper_dir" || {
-  notify-send "Wallpaper Error" "$wallpaper_dir does not exist"
+  notify-send -e -i dialog-warning-symbolic "Wallpaper Error" "$wallpaper_dir does not exist"
   exit 1
 }
 
 mapfile -t WALLPAPERS < <(find "$wallpaper_dir" -maxdepth 1 -type f \( -iname '*.jpg' -o -iname '*.png' \) | sort)
 
 if [ ${#WALLPAPERS[@]} -eq 0 ]; then
-  notify-send "Wallpaper Error" "No wallpapers found in $wallpaper_dir"
-  cd "$CWD"
+  notify-send -e -i dialog-warning-symbolic "Wallpaper Error" "No wallpapers found in $wallpaper_dir"
+  cd "$CWD" || exit
   exit 1
 fi
 
@@ -28,10 +28,7 @@ SELECTED_WALL=$(printf "%b" "$ROFI_INPUT" | rofi -dmenu -p "Wallpaper" -show-ico
 if [ -n "$SELECTED_WALL" ]; then
   if [[ -f "$wallpaper_dir/$SELECTED_WALL" ]]; then
     cp -f "$wallpaper_dir/$SELECTED_WALL" "$wallpaper_current"
-    apply_wallpaper "$wallpaper_current" "Wallpaper set to $SELECTED_WALL"
+    apply_wallpaper "$wallpaper_current" "Wallpaper set to $SELECTED_WALL" checkmark-symbolic
   else
-    notify-send "Wallpaper Error" "Selected wallpaper file not found"
+    notify-send -e -i dialog-warning-symbolic "Wallpaper Error" "Selected wallpaper file not found"
   fi
-else
-  notify-send "Wallpaper" "No wallpaper selected"
-fi

@@ -16,15 +16,15 @@ PROFILE=$(printf '%s\n' "$MENU" | rofi -dmenu -i -p "Power Profile" -config "$ro
 case "$PROFILE" in
 *"Performance"*)
   powerprofilesctl set performance
-  notify-send "Power Profile" "Switched to Performance mode"
+  notify-send -e -i battery-profile-performance "Power Profile" "Switched to Performance mode"
   ;;
 *"Balanced"*)
   powerprofilesctl set balanced
-  notify-send "Power Profile" "Switched to Balanced mode"
+  notify-send -e -i power-profile-balanced-symbolic "Power Profile" "Switched to Balanced mode"
   ;;
 *"Power Saver"*)
   powerprofilesctl set power-saver
-  notify-send "Power Profile" "Switched to Power Saver mode"
+  notify-send -e -i battery-profile-powersave "Power Profile" "Switched to Power Saver mode"
   ;;
 *"Go Back")
   "$scripts_dir/rofi/main-menu.sh"

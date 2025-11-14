@@ -23,5 +23,5 @@ swww-daemon
 hyprctl reload
 
 if [ "$NO_NOTIFY" = false ]; then
-    notify-send -e -u low "Refresh" "Refreshed Hyprland, Waybar and Swaync, Swww"
+    notify-send -e -i reload "Refresh" "Refreshed Hyprland, Waybar and Swaync, Swww"
 fi

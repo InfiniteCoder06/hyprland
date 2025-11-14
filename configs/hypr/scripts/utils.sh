@@ -22,9 +22,10 @@ check_dir_exists() {
 apply_wallpaper() {
   local wallpaper_path="$1"
   local notify_msg="$2"
+  local icon="$3"
 
   swww img "$wallpaper_path" "${SWWW_PARAMS[@]}"
   matugen image "$wallpaper_path"
   "$scripts_dir/refresh.sh" no-notify
-  notify-send "Wallpaper" "$notify_msg"
+  notify-send -e -i "$icon" "Wallpaper" "$notify_msg"
 }

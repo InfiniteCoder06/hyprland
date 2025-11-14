@@ -4,7 +4,7 @@
 STEP=5 # percent per brightness step
 APP_NAME="BrightnessOSD"
 TITLE="Brightness"
-ICON_BRIGHTNESS="display-brightness"
+icon="display-brightness-symbolic"
 
 # --- ARGUMENT PARSING ---
 case "$1" in
@@ -30,5 +30,5 @@ notify-send -e -a "$APP_NAME" "$TITLE" "${brightness_percent}%" \
   -h boolean:SWAYNC_BYPASS_DND:true \
   -h string:x-canonical-private-synchronous:$APP_NAME \
   -h int:value:"$brightness_percent" \
-  -i "$ICON_BRIGHTNESS" \
+  -i "$icon" \
   -u low

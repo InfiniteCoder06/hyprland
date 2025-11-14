@@ -1,146 +1,128 @@
 #!/bin/bash
-# Hyprland Keymap Reference Menu
-# Author: Binoy Manoj
-# GitHub: https://github.com/binoymanoj
 
-# Generate keymap list with icons and descriptions
 show_keymaps() {
   cat <<EOF
 󰌌 SUPER + RETURN → Open Terminal
-󰍉 SUPER + SPACE → Main Menu (System Menu)
-󰖙 SUPER + C → Close Active Window
-󰗼 SUPER + SHIFT + M → Exit Hyprland
-󰖟 SUPER + B → Open Browser (Brave)
-󰉋 SUPER + E → File Manager
-󰉌 SUPER + Z → Toggle Floating
-󰘶 SUPER + P → Pseudo Tiling
-󰐃 SUPER + CTRL + P → Pin Window
+󰖙 SUPER + Q → Close Active Window
+󰖟 SUPER + B → Open Browser
+󰉋 SUPER + E → Open File Manager
+󰍉 SUPER + C → Main Menu
+󰍉 SUPER + SPACE → Application Launcher
+󰑓 SUPER + ALT + R → Refresh Scripts
+󰅖 SUPER + V → Clipboard Manager
+󰌾 SUPER + L → Lock Screen
+󰊓 SUPER + SHIFT + F → Fullscreen
+󰉌 SUPER + F → Toggle Floating
+󰉌 SUPER + ALT + SPACE → All Float
+󰐥 CTRL + ALT + DELETE → Power Menu
+󰁍 SUPER + CTRL + D → Remove Master
+󰁍 SUPER + I → Add Master
+󰁍 SUPER + J → Cycle Next
+󰁍 SUPER + K → Cycle Prev
+󰁍 SUPER + CTRL + RETURN → Swap with Master
 󰯌 SUPER + SHIFT + I → Toggle Split
-󰊓 SUPER + F → Fullscreen
-󰊓 SUPER + SHIFT + F → Maximize (keeps gaps)
-󰞅 SUPER + . → Emoji Picker
-󰍉 ALT + SPACE → Rofi App Launcher
-󰜉 SUPER + R → Smart Run/Search
-󰇘 ALT + R → Rofi Run Commands
-󰖯 ALT + TAB → Window Switcher
-󰌾 SUPER + SHIFT + P → KeePassXC
-󰐥 SUPER + SHIFT + Q → Power Menu
-󰅖 SUPER + V → Clipboard History
-󰅖 SUPER + SHIFT + V → Delete Clipboard Entry
-󰅖 SUPER + SHIFT + ALT + V → Wipe Clipboard
-󰝚 SUPER + M → Music Player
-󰐊 SUPER + ALT + SPACE → Play/Pause Media
-󰒮 SUPER + ALT + LEFT → Previous Track
-󰒭 SUPER + ALT + RIGHT → Next Track
-󰒮 SUPER + ALT + H → Previous Track
-󰒭 SUPER + ALT + L → Next Track
-󰕾 SUPER + ALT + UP → Volume Up
-󰕿 SUPER + ALT + DOWN → Volume Down
-󰕿 SUPER + ALT + J → Volume Down
-󰕾 SUPER + ALT + K → Volume Up
-󰖁 SUPER + ALT + M → Toggle Mute
-󰍬 SUPER + ALT + D → Toggle Mic Mute
-󰃞 SUPER + ALT + = → Brightness Up
-󰃞 SUPER + ALT + - → Brightness Down
-󰽶 SUPER + ALT + N → Night Light Toggle
-󰅶 SUPER + ALT + C → Caffeine Toggle
-󰒲 SUPER + ALT + O → System Suspend
-󰁍 SUPER + ←/→/↑/↓ → Move Focus
-󰁍 SUPER + H/J/K/L → Move Focus (Vim)
-󰜸 SUPER + SHIFT + ←/→/↑/↓ → Move Window
-󰜸 SUPER + SHIFT + H/J/K/L → Move Window (Vim)
-󰩨 SUPER + CTRL + ←/→/↑/↓ → Resize Window
-󰩨 SUPER + CTRL + H/J/K/L → Resize Window (Vim)
-󰌾 ALT + L → Lock Screen
-󰑓 SUPER + SHIFT + T → Restart Panel
-󰖕 SUPER + T → Hide Panel
-󰸉 SUPER + ALT + W → Wallpaper Selector
-󰍉 CTRL + SHIFT + ESC → System Monitor
-󱂬 SUPER + 1-9/0 → Switch Workspace
-󰜸 SUPER + SHIFT + 1-9/0 → Move to Workspace
-󰜸 SUPER + ALT + 1-9/0 → Move Silent to Workspace
-󱂩 SUPER + S → Toggle Special Workspace
-󰜸 SUPER + SHIFT + S → Move to Special Workspace
-󰍹 SUPER + ALT + [ → Move Workspace to Left Monitor
-󰍹 SUPER + ALT + ] → Move Workspace to Right Monitor
-󰍽 SUPER + SCROLL → Switch Workspace
-󰍽 SHIFT + ALT + H/L → Previous/Next Workspace
-󰍽 SHIFT + ALT + ←/→ → Previous/Next Workspace
-󰆧 SUPER + LMB Drag → Move Window
-󰩨 SUPER + RMB Drag → Resize Window
-󰹑 PRINT → Screenshot Area (Clipboard)
-󰹑 SUPER + PRINT → Screenshot Area (Save)
-󰹑 SUPER + ALT + P → Screenshot Full Screen
-󰕾 XF86AudioRaiseVolume → Volume Up
-󰕿 XF86AudioLowerVolume → Volume Down
+󰘶 SUPER + P → Pseudo Tiling
+󰐃 SUPER + M → Set Split Ratio 0.3
+󰐃 SUPER + G → Toggle Group
+󰐃 SUPER + CTRL + TAB → Change Group Active
+󰖯 ALT + TAB → Cycle Next Window
+󰖯 ALT + TAB → Bring Active to Top
+󰍬 XF86AudioMicMute → Mic Mute
 󰖁 XF86AudioMute → Toggle Mute
-󰍬 XF86AudioMicMute → Toggle Mic Mute
 󰃞 XF86MonBrightnessUp → Brightness Up
 󰃝 XF86MonBrightnessDown → Brightness Down
-󰒭 XF86AudioNext → Next Track
-󰐊 XF86AudioPlay → Play/Pause
-󰒮 XF86AudioPrev → Previous Track
-󰐎 SUPER + F10 → OBS Recording Toggle
-EOF
-}
-
-# Kanata Keymaps
-show_kanata_keymaps() {
-  cat <<EOF
-󰌌 Kanata Home Row Mods
-A → Tap: a | Hold: Left Ctrl
-S → Tap: s | Hold: Left Alt
-D → Tap: d | Hold: Left Meta
-F → Tap: f | Hold: Left Shift
-J → Tap: j | Hold: Right Shift
-K → Tap: k | Hold: Right Meta
-L → Tap: l | Hold: Right Alt
-; → Tap: ; | Hold: Right Ctrl
-
-󰌌 Kanata Layers
-V → Tap: v | Hold: Fast Mouse Layer
-B → Tap: b | Hold: Mouse Layer (slow)
-X → Tap: x | Hold: Mouse Scroll Layer
-Space → Tap: Space | Hold: Vim Navigation Layer
-
-󰅒 Vim Navigation (Space Layer)
-H → Left | J → Down | K → Up | L → Right
-
-󰍽 Mouse Navigation
-V Hold → Fast mouse movement + L/R click
-B Hold → Slow mouse movement + L/R click
-X Hold → Scroll Up/Down
+󰕾 XF86AudioRaiseVolume → Volume Up
+󰕿 XF86AudioLowerVolume → Volume Down
+󰹑 PRINT → Screenshot Screen
+󰹑 SUPER + PRINT → Screenshot Area
+󰩨 SUPER + SHIFT + ← → Resize Left
+󰩨 SUPER + SHIFT + → → Resize Right
+󰩨 SUPER + SHIFT + ↑ → Resize Up
+󰩨 SUPER + SHIFT + ↓ → Resize Down
+󰜸 SUPER + CTRL + ← → Move Window Left
+󰜸 SUPER + CTRL + → → Move Window Right
+󰜸 SUPER + CTRL + ↑ → Move Window Up
+󰜸 SUPER + CTRL + ↓ → Move Window Down
+󰜸 SUPER + ALT + ← → Swap Window Left
+󰜸 SUPER + ALT + → → Swap Window Right
+󰜸 SUPER + ALT + ↑ → Swap Window Up
+󰜸 SUPER + ALT + ↓ → Swap Window Down
+󰁍 SUPER + ← → Move Focus Left
+󰁍 SUPER + → → Move Focus Right
+󰁍 SUPER + ↑ → Move Focus Up
+󰁍 SUPER + ↓ → Move Focus Down
+󰍽 SUPER + TAB → Next Workspace
+󰍽 SUPER + SHIFT + TAB → Previous Workspace
+󱂩 SUPER + U → Toggle Special Workspace
+󰜸 SUPER + SHIFT + U → Move to Special Workspace
+󱂬 SUPER + 1 → Switch to Workspace 1
+󱂬 SUPER + 2 → Switch to Workspace 2
+󱂬 SUPER + 3 → Switch to Workspace 3
+󱂬 SUPER + 4 → Switch to Workspace 4
+󱂬 SUPER + 5 → Switch to Workspace 5
+󱂬 SUPER + 6 → Switch to Workspace 6
+󱂬 SUPER + 7 → Switch to Workspace 7
+󱂬 SUPER + 8 → Switch to Workspace 8
+󱂬 SUPER + 9 → Switch to Workspace 9
+󱂬 SUPER + 0 → Switch to Workspace 10
+󰜸 SUPER + SHIFT + 1 → Move to Workspace 1
+󰜸 SUPER + SHIFT + 2 → Move to Workspace 2
+󰜸 SUPER + SHIFT + 3 → Move to Workspace 3
+󰜸 SUPER + SHIFT + 4 → Move to Workspace 4
+󰜸 SUPER + SHIFT + 5 → Move to Workspace 5
+󰜸 SUPER + SHIFT + 6 → Move to Workspace 6
+󰜸 SUPER + SHIFT + 7 → Move to Workspace 7
+󰜸 SUPER + SHIFT + 8 → Move to Workspace 8
+󰜸 SUPER + SHIFT + 9 → Move to Workspace 9
+󰜸 SUPER + SHIFT + 0 → Move to Workspace 10
+󰜸 SUPER + CTRL + 1 → Move Silent to Workspace 1
+󰜸 SUPER + CTRL + 2 → Move Silent to Workspace 2
+󰜸 SUPER + CTRL + 3 → Move Silent to Workspace 3
+󰜸 SUPER + CTRL + 4 → Move Silent to Workspace 4
+󰜸 SUPER + CTRL + 5 → Move Silent to Workspace 5
+󰜸 SUPER + CTRL + 6 → Move Silent to Workspace 6
+󰜸 SUPER + CTRL + 7 → Move Silent to Workspace 7
+󰜸 SUPER + CTRL + 8 → Move Silent to Workspace 8
+󰜸 SUPER + CTRL + 9 → Move Silent to Workspace 9
+󰜸 SUPER + CTRL + 0 → Move Silent to Workspace 10
+󰜸 SUPER + SHIFT + [ → Move to Workspace -1
+󰜸 SUPER + SHIFT + ] → Move to Workspace +1
+󰜸 SUPER + CTRL + [ → Move Silent to Workspace -1
+󰜸 SUPER + CTRL + ] → Move Silent to Workspace +1
+󰍽 SUPER + MOUSE DOWN → Next Workspace
+󰍽 SUPER + MOUSE UP → Previous Workspace
+󰍽 SUPER + . → Next Workspace
+󰍽 SUPER + , → Previous Workspace
+󰆧 SUPER + LMB DRAG → Move Window
+󰩨 SUPER + RMB DRAG → Resize Window
 EOF
 }
 
 # Function to show category-based view
 show_categories() {
-  CATEGORY=$(echo -e "󰍉 All Keybindings\n󰌌 Kanata Keybindings\n󰇘 Window Management\n󱂬 Workspaces\n󰝚 Media Controls\n󰕾 System Controls\n󰹑 Screenshots\n󰍉 Applications" | rofi -dmenu -i -p "Keymap Categories")
+  CATEGORY=$(echo -e "󰍉 All Keybindings\n󰇘 Window Management\n󱂬 Workspaces\n󰝚 Media Controls\n󰕾 System Controls\n󰹑 Screenshots\n󰍉 Applications" | rofi -dmenu -i -p "Keymap Categories")
 
   case "$CATEGORY" in
   *"All Keybindings")
     show_keymaps | rofi -dmenu -i -p "Keybindings" -no-custom
     ;;
   *"Window Management")
-    show_keymaps | grep -E "(Move Focus|Move Window|Resize|Close|Float|Split|Fullscreen|Pin|Drag)" | rofi -dmenu -i -p "Window Management" -no-custom
-    ;;
-  *"Kanata"*)
-    show_kanata_keymaps | rofi -dmenu -i -p "Kanata Keys" -no-custom
+    show_keymaps | grep -E "(Move Focus|Move Window|Resize|Close|Float|Split|Fullscreen|Drag)" | rofi -dmenu -i -p "Window Management" -no-custom
     ;;
   *"Workspaces")
     show_keymaps | grep -E "(Workspace|Special)" | rofi -dmenu -i -p "Workspace Keys" -no-custom
     ;;
   *"Media Controls")
-    show_keymaps | grep -E "(Media|Play|Pause|Track|Music|Volume|Brightness)" | rofi -dmenu -i -p "Media Controls" -no-custom
+    show_keymaps | grep -E "(Volume|Brightness|Mute)" | rofi -dmenu -i -p "Media Controls" -no-custom
     ;;
   *"System Controls")
-    show_keymaps | grep -E "(Power|Lock|Exit|Suspend|Mute|Night Light|Caffeine|System)" | rofi -dmenu -i -p "System Controls" -no-custom
+    show_keymaps | grep -E "(Power|Lock|Mute)" | rofi -dmenu -i -p "System Controls" -no-custom
     ;;
   *"Screenshots")
     show_keymaps | grep -E "(Screenshot|PRINT)" | rofi -dmenu -i -p "Screenshot Keys" -no-custom
     ;;
   *"Applications")
-    show_keymaps | grep -E "(Terminal|Browser|File Manager|Rofi|Emoji|Clipboard|KeePass|OBS)" | rofi -dmenu -i -p "Application Keys" -no-custom
+    show_keymaps | grep -E "(Terminal|Browser|File Manager|Menu|Clipboard)" | rofi -dmenu -i -p "Application Keys" -no-custom
     ;;
   esac
 }
