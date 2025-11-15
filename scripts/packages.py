@@ -70,7 +70,6 @@ class Packages(Module):
         "nautilus-code-git",
         "nautilus-open-any-terminal",
         "paruz",
-        "rofi-bluetooth",
         "visual-studio-code-bin",
         "zen-browser-bin",
     ]
