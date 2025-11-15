@@ -4,7 +4,7 @@
 STEP=5 # percent per brightness step
 APP_NAME="BrightnessOSD"
 TITLE="Brightness"
-icon="display-brightness-symbolic"
+icon="display-brightness"
 
 # --- ARGUMENT PARSING ---
 case "$1" in

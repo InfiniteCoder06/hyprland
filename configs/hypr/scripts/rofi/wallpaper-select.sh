@@ -32,3 +32,4 @@ if [ -n "$SELECTED_WALL" ]; then
   else
     notify-send -e -i dialog-warning-symbolic "Wallpaper Error" "Selected wallpaper file not found"
   fi
+fi
